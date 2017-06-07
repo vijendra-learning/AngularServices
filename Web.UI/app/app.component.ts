@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { Employee } from './Employee';
 import { EmployeeService } from './Employee.service';
-import { Http, HttpModule} from '@angular/http';
-import 'rxjs/add/operator/map';
 
 @Component({
     selector: 'my-app',
@@ -17,6 +15,6 @@ export class AppComponent
     MyEmployees: Employee[];
     constructor(EmpService: EmployeeService)
     {
-        this.MyEmployees = EmpService.getEmployees().map(res=> res);
+        EmpService.getEmployees().subscribe(res => this.MyEmployees = res);
     }
 }

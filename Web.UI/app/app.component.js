@@ -11,11 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var Employee_service_1 = require("./Employee.service");
-require("rxjs/add/operator/map");
 var AppComponent = (function () {
     function AppComponent(EmpService) {
+        var _this = this;
         this.name = 'Angular 2';
-        this.MyEmployees = EmpService.getEmployees().map(function (res) { return res; });
+        EmpService.getEmployees().subscribe(function (res) { return _this.MyEmployees = res; });
     }
     return AppComponent;
 }());
