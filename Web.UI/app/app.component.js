@@ -15,7 +15,7 @@ require("rxjs/add/operator/map");
 var AppComponent = (function () {
     function AppComponent(EmpService) {
         this.name = 'Angular 2';
-        this.MyEmployees = EmpService.getEmployees().map(function (res) { return res; });
+        this.MyEmployees = EmpService.getEmployees();
     }
     return AppComponent;
 }());

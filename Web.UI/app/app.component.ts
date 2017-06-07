@@ -17,6 +17,6 @@ export class AppComponent
     MyEmployees: Employee[];
     constructor(EmpService: EmployeeService)
     {
-        this.MyEmployees = EmpService.getEmployees().map(res=> res);
+        this.MyEmployees = EmpService.getEmployees();
     }
 }
